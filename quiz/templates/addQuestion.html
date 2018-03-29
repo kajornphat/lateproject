@@ -1,0 +1,13 @@
+<html>
+  <head>
+      <title>Add Question</title>
+    </head>
+    <body>
+      <h1>Ask the Question</h1>
+      <form method="POST">
+        <input name="new_question" id="id_new_question" placeholder="Ask anything" />
+        {% csrf_token %}
+      </form>
+    </body>
+
+</html>
