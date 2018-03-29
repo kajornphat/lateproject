@@ -17,12 +17,13 @@ class NewVisitorTest(unittest.TestCase):
         # Direct to the website
         self.browser.get('http://localhost:8000')
 
-        self.assertIn('Hello word, this is a quiz.', self.browser.title)
+        self.assertIn('This is a quiz.', self.browser.title)
 
         # There are a question that it need to be answer
         # First question
-        # Donald Trump was born in thailand
-
+        # Donald Trump was born in thailand?
+        header_text = self.browser.find_element_by_tag_name('h2').text
+        self.assertIn('Donald Trump was born in thailand?', header_text)
         # The answer should be false
 
         self.fail('Finish the test!') #
