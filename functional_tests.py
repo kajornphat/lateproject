@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import unittest
 
 class NewVisitorTest(unittest.TestCase):
@@ -16,7 +17,14 @@ class NewVisitorTest(unittest.TestCase):
         # Direct to the website
         self.browser.get('http://localhost:8000')
 
-        self.assertIn('Hello word, this is a quiz.', self.browser.title) #
+        self.assertIn('Hello word, this is a quiz.', self.browser.title)
+
+        # There are a question that it need to be answer
+        # First question
+        # Donald Trump was born in thailand
+
+        # The answer should be false
+
         self.fail('Finish the test!') #
         # She is invited to enter a to-do item straight away
 
