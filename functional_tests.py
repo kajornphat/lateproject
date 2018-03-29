@@ -15,8 +15,8 @@ class NewVisitorTest(unittest.TestCase):
         # All you have to do is choose true or false
         # Direct to the website
         self.browser.get('http://localhost:8000')
-        
-        self.assertIn('To-Do', self.browser.title) #
+
+        self.assertIn('Hello word, this is a quiz.', self.browser.title) #
         self.fail('Finish the test!') #
         # She is invited to enter a to-do item straight away
 
