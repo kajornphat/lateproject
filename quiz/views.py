@@ -4,8 +4,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 def home_page(request):
-    first_question = Question.objects.first()
-    return render(request, 'home_page.html', {'item' : first_question})
+    first_question = Question.objects.all()
+    return render(request, 'home_page.html', {'items' : first_question})
 
 def addQuestion(request):
     if request.method == 'POST':

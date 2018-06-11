@@ -2,12 +2,21 @@
     <title>
       This is a quiz.
     </title>
-
   <body>
-      <h1>Answer these Question</h1>
+      <h1>About the Question</h1>
+
+      <br>
+        <form method="POST" action="/addQuestion">
+          <h2>Any Question?</h2> <input name="new_question" id="id_new_question" placeholder="Ask here"/>
+          <input id="id_submit" type="submit" value="Submit a question">
+          {% csrf_token %}
+        </form>
+
+      <h2>Answer these Qestion</h2>
+      {% for item in items %}
       <br>
       {{item.question_text}}
-
+      {% endfor %}
     </body>
 
 </html>
