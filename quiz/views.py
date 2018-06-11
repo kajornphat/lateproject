@@ -15,4 +15,20 @@ def addQuestion(request):
         return redirect('/')
     return render(request, 'addQuestion.html')
 
+def voteYes(request):
+    vote = request.POST['Yes']
+    selected_question = Question.objects.get(id=vote)
+    a = selected_question.say_yes + 1
+    selected_question.say_yes = a
+    selected_question.save()
+    return redirect('/')
+        
+def voteNo(request):
+    vote = request.POST['No']
+    selected_question = Question.objects.get(id=vote)
+    b = selected_question.say_yes + 1
+    selected_question.say_yes = b
+    selected_question.save()
+    return redirect('/')
+
 # Create your views here.
