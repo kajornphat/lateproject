@@ -16,15 +16,14 @@
       {% for item in items %}
       <br>
       {{item.question_text}}
-      <form method="POST" action="/voteyes">
-        <button type="submit" name="Yes" value={{item.id}} id={{ forloop.counter }}>Yes</button>
-        {% csrf_token %}
+      <form method="POST" action="/vote">
+        {% csrf_token %}   
+
+        <button type="submit" name="vote_yes" value={{item.id}} id={{ forloop.counter }}>Yes</button>
+        <button type="submit" name="vote_no" value={{item.id}} id={{ forloop.counter }}>No</button>
+       
       </form>
       
-      <form method="POST" action="/voteno">
-        <button type="submit" name="No" value={{item.id}} id={{ forloop.counter }}>No</button>
-        {% csrf_token %}
-      </form>
       {% endfor %}
     </body>
 

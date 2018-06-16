@@ -13,7 +13,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_can_start_a_list_and_retrieve_it_later(self): #
         # There a website you could quiz your general knowledge
-        # All you have to do is choose true or false
+        # All you have to do is choose Yes or No
         # Direct to the website
         self.browser.get('http://localhost:8000')
 
@@ -32,3 +32,4 @@ class NewVisitorTest(unittest.TestCase):
 
 if __name__ == '__main__': #
     unittest.main(warnings='ignore')
+    
