@@ -39,7 +39,12 @@ def vote(request):
         return render(request, 'result.html', {'num_voteyes' : selected_question.say_yes, 'num_voteno' : selected_question.say_no})    
     
     return redirect('/')
-# def voteNo(request):
+
+def deleteQuestion(request):
+    choose = request.POST.get("delete_question")
+    selected_question = Question.objects.get(id=choose)
+    selected_question.delete()
+    return redirect('/')
     
 
 # Create your views here.

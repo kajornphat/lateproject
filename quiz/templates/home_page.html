@@ -13,18 +13,26 @@
         </form>
 
       <h2>Answer these Qestion</h2>
-      {% for item in items %}
-      <br>
-      {{item.question_text}}
-      <form method="POST" action="/vote">
-        {% csrf_token %}   
-
-        <button type="submit" name="vote_yes" value={{item.id}} id={{ forloop.counter }}>Yes</button>
-        <button type="submit" name="vote_no" value={{item.id}} id={{ forloop.counter }}>No</button>
-       
-      </form>
+      <table id="id_list_table">
+          {% for item in items %}
+        <tr>
+            <td>{{item.question_text}}</td>
       
-      {% endfor %}
+          <form method="POST" action="/vote">
+            {% csrf_token %}  
+
+            <td><button type="submit" name="vote_yes" value={{item.id}} id={{ forloop.counter }}>Yes</button></td>
+            <td><button type="submit" name="vote_no" value={{item.id}} id={{ forloop.counter }}>No</button></td>
+          
+          </form>
+          
+          <form method="POST" action="/delete_question">
+            {% csrf_token %}  
+            <td><button type="submit" name="delete_question" value={{item.id}} id={{ forloop.counter }}>Delete</button></td>
+          </form>
+        </tr>
+        {% endfor %}
+      </table>
     </body>
 
 </html>
